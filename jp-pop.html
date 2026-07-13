@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일본 팝 소개</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              night: { 950: "#060b17", 900: "#0a1326", 800: "#102042" },
+              neon: { 400: "#67d8ff", 500: "#4bb6ff", 600: "#7a8cff" },
+            },
+            boxShadow: { glow: "0 24px 80px rgba(75, 182, 255, 0.18)" },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-night-950 text-white antialiased">
+    <div class="pointer-events-none fixed inset-0">
+      <div class="absolute -left-24 top-0 h-80 w-80 rounded-full bg-neon-500/20 blur-3xl"></div>
+      <div class="absolute right-0 top-12 h-96 w-96 rounded-full bg-neon-600/20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"></div>
+    </div>
+    <main class="relative z-10 mx-auto w-[min(1120px,calc(100%-1.5rem))] py-6 sm:py-8">
+      <header class="mb-6 rounded-3xl border border-white/10 bg-white/5 px-4 py-4 shadow-glow backdrop-blur-xl sm:px-6">
+        <div class="flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-neon-400 to-neon-600 text-sm font-black text-slate-950 shadow-lg shadow-neon-500/25">J</div>
+          <div>
+            <div class="text-xs font-semibold tracking-[0.35em] text-sky-100/80">GLOBAL POP</div>
+            <p class="mt-1 text-sm text-slate-300">일본 팝의 정교한 감각과 서브컬처</p>
+          </div>
+        </div>
+        <nav class="mt-4 flex gap-2 overflow-x-auto pb-1 text-sm text-slate-300 sm:mt-5 sm:flex-wrap sm:overflow-visible" aria-label="글로벌 팝 메뉴">
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="index.html">K-POP</a>
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="us-pop.html">미국 팝</a>
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="uk-pop.html">영국 팝</a>
+          <a class="shrink-0 rounded-full border border-neon-400/25 bg-neon-500/15 px-4 py-2 font-semibold text-sky-100 transition hover:-translate-y-0.5 hover:bg-neon-500/25 hover:text-white" href="jp-pop.html">일본 팝</a>
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="latin-pop.html">라틴 팝</a>
+        </nav>
+      </header>
+
+      <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/12 via-white/8 to-white/5 p-6 shadow-glow backdrop-blur-xl sm:p-8">
+          <div class="absolute -bottom-20 -right-10 h-56 w-56 rounded-full bg-neon-500/20 blur-3xl"></div>
+          <div class="absolute -left-12 top-24 h-40 w-40 rounded-full bg-neon-600/15 blur-3xl"></div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-slate-200">
+            <span class="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-neon-400 to-neon-600 shadow-[0_0_16px_rgba(103,216,255,0.8)]"></span>
+            섬세한 프로덕션과 서브컬처의 결합
+          </div>
+          <h1 class="mt-5 max-w-xl text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+            일본 팝,
+            <span class="bg-gradient-to-r from-neon-400 via-cyan-200 to-neon-600 bg-clip-text text-transparent">정교한 멜로디와 다채로운 세계관</span>
+          </h1>
+          <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            일본 팝은 세밀한 작곡, 다양한 서브컬처와의 연결, 그리고 물리 음반과 팬 참여 중심 문화가 강한 것이
+            특징입니다. 애니메이션, 게임, 아이돌 문화와도 밀접하게 연결되어 독자적인 분위기를 만들어냅니다.
+          </p>
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-lg font-bold text-sky-100">정교함</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">작곡과 편곡이 섬세하게 다듬어집니다.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-lg font-bold text-sky-100">서브컬처</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">애니메이션과 게임 문화와의 연결이 강합니다.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-lg font-bold text-sky-100">팬 참여</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">수집형 음반과 공연 중심 문화가 발달했습니다.</p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="grid gap-4">
+          <div class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-neon-500/20 to-neon-600/10 p-6 shadow-glow backdrop-blur-xl">
+            <h2 class="text-xl font-bold text-white">일본 팝의 인상적인 포인트</h2>
+            <p class="mt-3 leading-7 text-slate-300">
+              음악 자체의 완성도뿐 아니라 세계관, 캐릭터성, 굿즈 문화가 함께 성장하는 점이 매력입니다.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">아이돌</span>
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">애니메이션</span>
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">굿즈</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">J-POP</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">일본 대중음악의 대표 흐름</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">Anime</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">서브컬처와의 밀접한 연동</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">CD</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">물리 음반과 수집 문화 강세</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">Live</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">공연과 현장 체험 중심</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="mt-6 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl sm:p-8">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl font-bold text-white sm:text-3xl">일본 팝의 핵심 특징</h2>
+          <p class="mt-3 leading-8 text-slate-300">일본 팝은 섬세한 사운드와 독특한 문화 소비 방식이 함께 어우러져 있습니다.</p>
+        </div>
+        <div class="mt-6 grid gap-4 xl:grid-cols-3">
+          <article class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6">
+            <h3 class="text-lg font-semibold text-white">정교한 멜로디</h3>
+            <p class="mt-3 leading-7 text-slate-300">세밀한 작곡과 편곡으로 음악적 밀도가 높습니다.</p>
+          </article>
+          <article class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6">
+            <h3 class="text-lg font-semibold text-white">서브컬처 결합</h3>
+            <p class="mt-3 leading-7 text-slate-300">애니, 게임, 캐릭터 산업과 자연스럽게 연결됩니다.</p>
+          </article>
+          <article class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6">
+            <h3 class="text-lg font-semibold text-white">수집 문화</h3>
+            <p class="mt-3 leading-7 text-slate-300">앨범, 굿즈, 한정판 상품의 가치가 큽니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="py-8 text-center text-sm text-slate-400">일본 팝은 음악과 서브컬처, 수집 문화가 함께 이어지는 독특한 장르입니다.</footer>
+    </main>
+  </body>
+</html>
