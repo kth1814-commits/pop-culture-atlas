@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미국 팝 소개</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              night: { 950: "#060b17", 900: "#0a1326", 800: "#102042" },
+              neon: { 400: "#67d8ff", 500: "#4bb6ff", 600: "#7a8cff" },
+            },
+            boxShadow: { glow: "0 24px 80px rgba(75, 182, 255, 0.18)" },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-night-950 text-white antialiased">
+    <div class="pointer-events-none fixed inset-0">
+      <div class="absolute -left-24 top-0 h-80 w-80 rounded-full bg-neon-500/20 blur-3xl"></div>
+      <div class="absolute right-0 top-12 h-96 w-96 rounded-full bg-neon-600/20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"></div>
+    </div>
+    <main class="relative z-10 mx-auto w-[min(1120px,calc(100%-1.5rem))] py-6 sm:py-8">
+      <header class="mb-6 rounded-3xl border border-white/10 bg-white/5 px-4 py-4 shadow-glow backdrop-blur-xl sm:px-6">
+        <div class="flex items-center gap-3">
+          <div class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-neon-400 to-neon-600 text-sm font-black text-slate-950 shadow-lg shadow-neon-500/25">U</div>
+          <div>
+            <div class="text-xs font-semibold tracking-[0.35em] text-sky-100/80">GLOBAL POP</div>
+            <p class="mt-1 text-sm text-slate-300">미국 팝의 에너지와 대중성</p>
+          </div>
+        </div>
+        <nav class="mt-4 flex gap-2 overflow-x-auto pb-1 text-sm text-slate-300 sm:mt-5 sm:flex-wrap sm:overflow-visible" aria-label="글로벌 팝 메뉴">
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="index.html">K-POP</a>
+          <a class="shrink-0 rounded-full border border-neon-400/25 bg-neon-500/15 px-4 py-2 font-semibold text-sky-100 transition hover:-translate-y-0.5 hover:bg-neon-500/25 hover:text-white" href="us-pop.html">미국 팝</a>
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="uk-pop.html">영국 팝</a>
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="jp-pop.html">일본 팝</a>
+          <a class="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white" href="latin-pop.html">라틴 팝</a>
+        </nav>
+      </header>
+
+      <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/12 via-white/8 to-white/5 p-6 shadow-glow backdrop-blur-xl sm:p-8">
+          <div class="absolute -bottom-20 -right-10 h-56 w-56 rounded-full bg-neon-500/20 blur-3xl"></div>
+          <div class="absolute -left-12 top-24 h-40 w-40 rounded-full bg-neon-600/15 blur-3xl"></div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-slate-200">
+            <span class="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-neon-400 to-neon-600 shadow-[0_0_16px_rgba(103,216,255,0.8)]"></span>
+            세계 대중음악의 중심 중 하나
+          </div>
+          <h1 class="mt-5 max-w-xl text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+            미국 팝,
+            <span class="bg-gradient-to-r from-neon-400 via-cyan-200 to-neon-600 bg-clip-text text-transparent">대중성과 트렌드를 이끄는 음악</span>
+          </h1>
+          <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            미국 팝은 다양한 장르를 흡수하면서도 쉬운 멜로디와 강한 후렴, 세련된 프로덕션으로 전 세계 청취자에게
+            친숙하게 다가가는 스타일의 음악입니다. 차트 문화, 스타 시스템, 대형 투어와 MV 중심의 브랜딩이 강한
+            특징으로 알려져 있어요.
+          </p>
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-lg font-bold text-sky-100">차트 중심</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">빌보드 같은 순위 시스템과 함께 대중적 파급력이 큽니다.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-lg font-bold text-sky-100">장르 융합</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">팝, R&B, 힙합, 댄스, 락을 자유롭게 섞습니다.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-lg font-bold text-sky-100">대형 투어</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">공연과 페스티벌 문화가 산업의 중요한 축입니다.</p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="grid gap-4">
+          <div class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-neon-500/20 to-neon-600/10 p-6 shadow-glow backdrop-blur-xl">
+            <h2 class="text-xl font-bold text-white">미국 팝의 인상적인 포인트</h2>
+            <p class="mt-3 leading-7 text-slate-300">
+              대중성, 상업성, 스타성, 영상미가 모두 결합되어 글로벌 트렌드의 기준점처럼 작동합니다.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">차트</span>
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">투어</span>
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">스타 시스템</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">Pop</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">대중 친화적 멜로디와 쉬운 접근성</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">Hit</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">강한 훅과 반복 감상에 유리한 구조</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">MV</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">브랜딩과 이미지 구축의 핵심 도구</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-3xl font-black text-white">Tour</div>
+              <p class="mt-2 text-sm leading-6 text-slate-300">전 세계 팬을 만나는 공연 산업</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="mt-6 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl sm:p-8">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl font-bold text-white sm:text-3xl">미국 팝의 핵심 특징</h2>
+          <p class="mt-3 leading-8 text-slate-300">미국 팝은 다양성, 대중성, 산업 규모가 결합된 대표적인 글로벌 팝 문화입니다.</p>
+        </div>
+        <div class="mt-6 grid gap-4 xl:grid-cols-3">
+          <article class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6">
+            <h3 class="text-lg font-semibold text-white">대중성과 접근성</h3>
+            <p class="mt-3 leading-7 text-slate-300">간결한 구조와 반복되는 후렴으로 누구나 쉽게 따라 부를 수 있습니다.</p>
+          </article>
+          <article class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6">
+            <h3 class="text-lg font-semibold text-white">시대별 트렌드 흡수</h3>
+            <p class="mt-3 leading-7 text-slate-300">시대에 따라 디스코, EDM, R&B 등 새로운 흐름을 빠르게 받아들입니다.</p>
+          </article>
+          <article class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6">
+            <h3 class="text-lg font-semibold text-white">글로벌 영향력</h3>
+            <p class="mt-3 leading-7 text-slate-300">세계 음반 시장과 스트리밍 시장에서 강한 존재감을 유지합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="py-8 text-center text-sm text-slate-400">미국 팝은 대중음악의 흐름을 주도해 온 대표적인 글로벌 장르입니다.</footer>
+    </main>
+  </body>
+</html>

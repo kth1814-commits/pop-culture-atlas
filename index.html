@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              night: { 950: "#06101f", 900: "#0a1a31", 800: "#11284a" },
+              neon: { 400: "#67d8ff", 500: "#4bb6ff", 600: "#7a8cff" },
+            },
+            boxShadow: {
+              glow: "0 24px 80px rgba(75, 182, 255, 0.2)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-night-950 text-white antialiased">
+    <div class="pointer-events-none fixed inset-0">
+      <div class="absolute -left-24 top-0 h-80 w-80 rounded-full bg-neon-500/20 blur-3xl"></div>
+      <div class="absolute right-0 top-12 h-96 w-96 rounded-full bg-neon-600/20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl"></div>
+      <div
+        class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
+      ></div>
+    </div>
 
+    <main class="relative z-10 mx-auto w-[min(1120px,calc(100%-1.5rem))] py-6 sm:py-8">
+      <header
+        class="mb-6 rounded-3xl border border-white/10 bg-white/5 px-4 py-4 shadow-glow backdrop-blur-xl sm:px-6"
+      >
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-3">
+            <div
+              class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-neon-400 to-neon-600 text-sm font-black text-slate-950 shadow-lg shadow-neon-500/25"
+            >
+              ID
+            </div>
+            <div>
+              <div class="text-xs font-semibold tracking-[0.35em] text-sky-100/80">DIGITAL CARD</div>
+              <p class="mt-1 text-sm text-slate-300">randomuser.me 기반 자동 생성 명함</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <button
+              id="refreshBtn"
+              class="rounded-full border border-neon-400/25 bg-neon-500/15 px-4 py-2 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5 hover:bg-neon-500/25 hover:text-white"
+              type="button"
+            >
+              새 명함 받기
+            </button>
+            <button
+              id="copyBtn"
+              class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-white"
+              type="button"
+            >
+              이메일 복사
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article
+          class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/12 via-white/8 to-white/5 p-6 shadow-glow backdrop-blur-xl sm:p-8"
+        >
+          <div class="absolute -bottom-20 -right-10 h-56 w-56 rounded-full bg-neon-500/20 blur-3xl"></div>
+          <div class="absolute -left-12 top-24 h-40 w-40 rounded-full bg-neon-600/15 blur-3xl"></div>
+
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-slate-200"
+          >
+            <span
+              class="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-neon-400 to-neon-600 shadow-[0_0_16px_rgba(103,216,255,0.8)]"
+            ></span>
+            랜덤으로 생성된 프로필 명함
+          </div>
+
+          <div class="mt-6 flex flex-col gap-6 md:flex-row md:items-center">
+            <div class="mx-auto shrink-0 md:mx-0">
+              <div
+                class="relative h-40 w-40 overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-2 shadow-2xl shadow-neon-500/20"
+              >
+                <img
+                  id="avatar"
+                  alt="프로필 사진"
+                  class="h-full w-full rounded-[1.5rem] object-cover"
+                  src=""
+                />
+              </div>
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <p id="jobTitle" class="text-sm font-semibold tracking-[0.3em] text-neon-400 uppercase">
+                Creative Profile
+              </p>
+              <h1 id="fullName" class="mt-3 text-4xl font-black tracking-tight text-white sm:text-5xl">
+                Loading...
+              </h1>
+              <p id="username" class="mt-3 text-base text-slate-300"></p>
+              <p id="summary" class="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg"></p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-sm font-semibold tracking-[0.28em] text-neon-400">EMAIL</div>
+              <p id="email" class="mt-2 break-all text-sm leading-6 text-slate-200"></p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-sm font-semibold tracking-[0.28em] text-neon-400">PHONE</div>
+              <p id="phone" class="mt-2 text-sm leading-6 text-slate-200"></p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/6 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/8">
+              <div class="text-sm font-semibold tracking-[0.28em] text-neon-400">LOCATION</div>
+              <p id="location" class="mt-2 text-sm leading-6 text-slate-200"></p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="grid gap-4">
+          <div
+            class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-neon-500/20 to-neon-600/10 p-6 shadow-glow backdrop-blur-xl"
+          >
+            <h2 class="text-xl font-bold text-white">명함 정보</h2>
+            <p class="mt-3 leading-7 text-slate-300">
+              Random User API에서 받은 프로필을 활용해 이름, 연락처, 위치, 생년월일, 국적, 아이디까지 보여주는
+              디지털 명함입니다.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">API</span>
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">Glass UI</span>
+              <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">Responsive</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-xs font-semibold tracking-[0.25em] text-neon-400">BIRTHDAY</div>
+              <p id="birthday" class="mt-2 text-sm leading-6 text-slate-200"></p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-xs font-semibold tracking-[0.25em] text-neon-400">NATIONALITY</div>
+              <p id="nationality" class="mt-2 text-sm leading-6 text-slate-200"></p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-xs font-semibold tracking-[0.25em] text-neon-400">TIMEZONE</div>
+              <p id="timezone" class="mt-2 text-sm leading-6 text-slate-200"></p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
+              <div class="text-xs font-semibold tracking-[0.25em] text-neon-400">ID</div>
+              <p id="idValue" class="mt-2 text-sm leading-6 text-slate-200"></p>
+            </div>
+          </div>
+
+          <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
+            <h2 class="text-xl font-bold text-white">사용 방법</h2>
+            <p class="mt-3 leading-7 text-slate-300">
+              버튼을 누를 때마다 새로운 랜덤 프로필이 불러와집니다. 네트워크가 없으면 자동으로 예시 데이터가
+              표시되도록 해두었습니다.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="py-8 text-center text-sm text-slate-400">
+        Random User API를 사용한 디지털 명함 샘플
+      </footer>
+    </main>
+
+    <script>
+      const apiUrl =
+        "https://randomuser.me/api/?inc=name,location,email,phone,login,dob,picture,nat,id&noinfo";
+
+      const fallbackUser = {
+        name: { title: "Ms", first: "Yuna", last: "Park" },
+        login: { username: "yuna.park" },
+        email: "[email protected]",
+        phone: "+82 10-1234-5678",
+        location: { city: "Seoul", state: "Seoul", country: "South Korea", postcode: "04524" },
+        dob: { date: "1996-08-15T00:00:00.000Z" },
+        nat: "KR",
+        picture: { large: "https://randomuser.me/api/portraits/women/44.jpg" },
+        timezone: { offset: "+9:00", description: "Seoul" },
+        id: { name: "N/A", value: "CARD-0001" },
+      };
+
+      const els = {
+        avatar: document.getElementById("avatar"),
+        jobTitle: document.getElementById("jobTitle"),
+        fullName: document.getElementById("fullName"),
+        username: document.getElementById("username"),
+        summary: document.getElementById("summary"),
+        email: document.getElementById("email"),
+        phone: document.getElementById("phone"),
+        location: document.getElementById("location"),
+        birthday: document.getElementById("birthday"),
+        nationality: document.getElementById("nationality"),
+        timezone: document.getElementById("timezone"),
+        idValue: document.getElementById("idValue"),
+        refreshBtn: document.getElementById("refreshBtn"),
+        copyBtn: document.getElementById("copyBtn"),
+      };
+
+      function formatDate(value) {
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return "-";
+        return new Intl.DateTimeFormat("ko-KR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }).format(date);
+      }
+
+      function buildSummary(user) {
+        const name = `${user.name.title} ${user.name.first} ${user.name.last}`;
+        return `${name}님의 디지털 명함입니다. ${user.location.city}, ${user.location.country}를 기반으로 활동하며,
+        이메일과 전화번호로 빠르게 연결할 수 있습니다.`;
+      }
+
+      function renderUser(user) {
+        const fullName = `${user.name.title} ${user.name.first} ${user.name.last}`;
+        els.avatar.src = user.picture.large;
+        els.jobTitle.textContent = "Creative Profile";
+        els.fullName.textContent = fullName;
+        els.username.textContent = `@${user.login.username}`;
+        els.summary.textContent = buildSummary(user);
+        els.email.textContent = user.email;
+        els.phone.textContent = user.phone;
+        els.location.textContent = `${user.location.city}, ${user.location.state}, ${user.location.country}`;
+        els.birthday.textContent = formatDate(user.dob.date);
+        els.nationality.textContent = user.nat;
+        els.timezone.textContent = user.location.timezone?.description || user.timezone?.description || "-";
+        els.idValue.textContent = user.id?.value || "N/A";
+        document.title = `${fullName} | Digital Business Card`;
+      }
+
+      async function loadCard() {
+        els.refreshBtn.disabled = true;
+        els.refreshBtn.textContent = "불러오는 중...";
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) throw new Error("API request failed");
+          const data = await response.json();
+          renderUser(data.results[0]);
+        } catch (error) {
+          renderUser(fallbackUser);
+        } finally {
+          els.refreshBtn.disabled = false;
+          els.refreshBtn.textContent = "새 명함 받기";
+        }
+      }
+
+      els.refreshBtn.addEventListener("click", loadCard);
+      els.copyBtn.addEventListener("click", async () => {
+        const email = els.email.textContent.trim();
+        if (!email) return;
+        try {
+          await navigator.clipboard.writeText(email);
+          els.copyBtn.textContent = "복사 완료";
+          setTimeout(() => {
+            els.copyBtn.textContent = "이메일 복사";
+          }, 1200);
+        } catch {
+          els.copyBtn.textContent = "복사 실패";
+          setTimeout(() => {
+            els.copyBtn.textContent = "이메일 복사";
+          }, 1200);
+        }
+      });
+
+      loadCard();
+    </script>
+  </body>
+</html>
